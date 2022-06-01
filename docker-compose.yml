@@ -8,10 +8,12 @@ services:
       dockerfile: Dockerfile
 
     container_name: app
+    env_file: .env.nginx
     restart: unless-stopped
     tty: true
     working_dir: /var/www
-
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./:/var/www
       - ./docker-files/php/local.ini:/usr/local/etc/php/conf.d/local.ini
@@ -55,6 +57,21 @@ services:
       - mariadbdata:/var/lib/mysql
       - ./docker-files/mysql/my.cnf:/etc/mysql/my.cnf
 
+    networks:
+      - app-network
+
+  # PHPMYADMIN
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    depends_on: 
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: 123456
     networks:
       - app-network
 
