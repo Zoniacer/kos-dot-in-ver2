@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login
 Route::get('registration', [AuthController::class, 'registration'])->name('register-page');
 Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register'); 
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
+
+Route::post('add-kos', [KosController::class, 'add'])->name('add-kos');
