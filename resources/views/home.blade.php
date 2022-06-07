@@ -2,6 +2,7 @@
 @section('title')
 Home
 @endsection
+
 <style>
 .col-md-3{
   display: inline-block;
@@ -24,7 +25,7 @@ body .no-padding{
 }
 </style>
 @section('isi')
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div id="demo" class="carousel slide my-5" data-ride="carousel">
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
@@ -81,10 +82,10 @@ body .no-padding{
   
   <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    
+
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-    
+
   </a>
 </div>
 @endsection
