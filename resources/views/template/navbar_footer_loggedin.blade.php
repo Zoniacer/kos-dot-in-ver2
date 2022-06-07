@@ -202,7 +202,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 </head> 
 <body>
 	@section('navbar')
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 	<img src="assets/logover2.png" alt=""  width="80" height="50">  		
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
