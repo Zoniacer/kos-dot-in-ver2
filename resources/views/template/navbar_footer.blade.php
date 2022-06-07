@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Kos.in</title>
+<title>Kos.in | @yield('title')</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -191,6 +194,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	e.stopPropagation();
 });
 </script>
+<link rel="icon" type="image/x-icon" href="assets/logover2.png">
 </head> 
 <body>
 	@section('navbar')
@@ -202,39 +206,42 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav">
-			<a href="#" class="nav-item nav-link mt-1">Cari Kos!</a>
+			<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
+		</div>
+		<div class="navbar-nav">
+			<a href="#" class="nav-item nav-link mt-1">Cari Kos</a>
 		</div>
 		<div class="navbar-nav ml-auto action-buttons">
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mt-1 mr-4">Login</a>
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mt-1 mr-4">Masuk</a>
                 <div class="dropdown-menu action-form">
 					<form action="/examples/actions/confirmation.php" method="post">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Username" required="required">
+							<input type="text" class="form-control" placeholder="Nama Akun" required="required">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Password" required="required">
+							<input type="password" class="form-control" placeholder="Kata Sandi" required="required">
 						</div>
 						<input type="submit" class="btn btn-primary btn-block" value="Login">
 					</form>
                 </div>
 			</div>
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn mt-1">Sign up</a>
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn mt-1">Registrasi</a>
                 <div class="dropdown-menu action-form">
 					<form action="/examples/actions/confirmation.php" method="post">
-						<p class="hint-text">Fill in this form to create your account!</p>
+						<p class="hint-text">Isi form berikut ini untuk membuat akun anda!</p>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Username" required="required">
+							<input type="text" class="form-control" placeholder="Nama Akun" required="required">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Password" required="required">
+							<input type="password" class="form-control" placeholder="Kata Sandi" required="required">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Confirm Password" required="required">
+							<input type="password" class="form-control" placeholder="Konfirmasi Kata Sandi" required="required">
 						</div>
 						<div class="form-group">
-							<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+							<label class="form-check-label"><input type="checkbox" required="required"> Saya setuju dengan <a href="#">Terms &amp; Conditions</a></label>
 						</div>
 						<input type="submit" class="btn btn-primary btn-block" value="Sign up">
 					</form>
@@ -244,5 +251,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	</div>
 </nav>
 @show
+@yield("isi")
+
+<footer>
+
+</footer>
 </body>
 </html>
