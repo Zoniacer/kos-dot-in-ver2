@@ -168,6 +168,9 @@ body {
 	border: 2px solid #33cabb !important;
 	border: none;
 }
+ion-icon {
+  font-size: 24px;
+}
 @media (min-width: 1200px){
 	.form-inline .input-group {
 		width: 300px;
@@ -214,37 +217,14 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 		</div>
 		<div class="navbar-nav ml-auto action-buttons">
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mt-1 mr-4">Masuk</a>
+                
+				<a href="#" data-toggle="dropdown" class="">
+                    <ion-icon name="accessibility-outline"></ion-icon>
+                </a>
                 <div class="dropdown-menu action-form">
 					<form action="/examples/actions/confirmation.php" method="post">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Nama Akun" required="required">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Kata Sandi" required="required">
-						</div>
-						<input type="submit" class="btn btn-primary btn-block" value="Masuk">
-					</form>
-                </div>
-			</div>
-			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn mt-1">Registrasi</a>
-                <div class="dropdown-menu action-form">
-					<form action="/examples/actions/confirmation.php" method="post">
-						<p class="hint-text">Isi form berikut ini untuk membuat akun anda!</p>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Nama Akun" required="required">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Kata Sandi" required="required">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Konfirmasi Kata Sandi" required="required">
-						</div>
-						<div class="form-group">
-							<label class="form-check-label"><input type="checkbox" required="required"> Saya setuju dengan <a href="#">Terms &amp; Conditions</a></label>
-						</div>
-						<input type="submit" class="btn btn-primary btn-block" value="Registrasi">
+						<p class="hint-text">Selamat datang Nama_Akun!</p>
+						
 					</form>
 				</div>
 			</div>
