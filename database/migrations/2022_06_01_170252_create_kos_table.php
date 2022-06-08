@@ -21,12 +21,15 @@ return new class extends Migration
             $table->string('kecamatan');
             $table->string('kota');
             $table->string('provinsi');
+            $table->string('deskripsi');
             $table->integer('tersedia');
             $table->boolean('ac');
             $table->string('listrik');
             $table->boolean('wifi');
             $table->string('wc');
             $table->string('perabot')->nullable();
+            $table->long('harga');
+            $table->string('coverPath');
             $table->timestamps();
         });
     }

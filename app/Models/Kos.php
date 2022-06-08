@@ -21,12 +21,15 @@ class Kos extends Model
         'kecamatan',
         'kota',
         'provinsi',
+        'deskripsi',
         'tersedia',
         'ac',
         'listrik',
         'wifi',
         'wc',
         'perabot',
+        'harga',
+        'coverPath',
     ];
 
     /**

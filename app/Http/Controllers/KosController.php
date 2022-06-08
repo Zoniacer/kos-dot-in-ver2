@@ -15,14 +15,23 @@ class KosController extends Controller
             'kecamatan' => 'required',
             'kota' => 'required',
             'provinsi' => 'required',
+            'deksripsi' => 'required',
             'tersedia' => 'required',
             'ac' => 'required',
             'listrik' => 'required',
             'wifi' => 'required',
             'wc' => 'required',
+            'harga' => 'required',
+            'image' => 'required'
         ]);
 
+        $image = $request->image;
+
+        $filename = time()."-".$image->getClientOriginalName();
+        $path = $request->file('image')->storeAs("public/covers", $filename);
+
         $data = $request->all();
+        $data['filename'] = $filename;
         $check = $this->create($data);
 
         return redirect("dashboard")->withSuccess('Kos sukses dimasukkan');
@@ -37,12 +46,15 @@ class KosController extends Controller
             'kecamatan' => $data['kecamatan'],
             'kota' => $data['kota'],
             'provinsi' => $data['provinsi'],
+            'deskrpsi' => $data['deskripsi'],
             'tersedia' => $data['tersedia'],
             'ac' => $data['ac'],
             'listrik' => $data['listrik'],
             'wifi' => $data['wifi'],
             'wc' => $data['wc'],
             'perabot' => $data['perabot'],
+            'harga' => $data['harga'],
+            'coverPath' => $data['filename']
         ]);
     }
 
