@@ -236,6 +236,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 <body>
 	@section('navbar')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 	<img src="assets/logover2.png" alt=""  width="80" height="50">  		
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -304,6 +305,8 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 				</div> -->
 				@endauth
 =======
+=======
+>>>>>>> fix commit
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 		<img src="assets/logover2.png" alt="" width="80" height="50">
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

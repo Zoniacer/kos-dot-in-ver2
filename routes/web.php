@@ -26,6 +26,7 @@ Route::get('login-page', [AuthController::class, 'index'])->name('login-page');
 Route::get('registration-page', [AuthController::class, 'registration'])->name('registration-page');
 // Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register'); 
 // Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
+Route::get('search-page', [KosController::class, 'getKosSearchPage'])->name('search.page');
 Route::post('search', [KosController::class, 'getKosByFilter'])->name('search');
 Route::post('add-kos', [KosController::class, 'add'])->name('add-kos');
 Route::post('add-room', [KosController::class, 'addRoom'])->name('add-room');

@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class KosController extends Controller
 {
-    public function add(Request $request) {
+    public function add(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'alamat' => 'required',
@@ -26,7 +27,8 @@ class KosController extends Controller
         return redirect("dashboard")->withSuccess('Kos sukses dimasukkan');
     }
 
-    public function create(array $data) {
+    public function create(array $data)
+    {
         return Kos::create([
             'ownerId' => $data['ownerId'],
             'name' => $data['name'],
@@ -43,12 +45,19 @@ class KosController extends Controller
         ]);
     }
 
-    public function getKosById(int $id) {
+    public function getKosById(int $id)
+    {
         $kos = Kos::where('id', $id);
         return $kos;
     }
 
-    public function getKosByFilter(Request $request) {
+    public function getKosSearchPage()
+    {
+        return view('cari_kos');
+    }
+
+    public function getKosByFilter(Request $request)
+    {
         $data = $request->all();
         // Code Here
     }
