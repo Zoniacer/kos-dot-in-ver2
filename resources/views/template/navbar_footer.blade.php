@@ -461,14 +461,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
+            <h6>Kebijakan</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+              <li><a href="http://scanfcode.com/category/c-language/">Kebijakan Privasi</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">Syarat dan Ketentuan Umum</a></li>
             </ul>
           </div>
 

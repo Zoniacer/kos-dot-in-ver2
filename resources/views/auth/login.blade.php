@@ -5,6 +5,12 @@ Login
 @endsection
 @section('content')
 @section('isi')
+<style>
+body {
+  background-image: url('assets/fotokosan/BG.png');
+  background-attachment: fixed;
+}
+</style>
 <div class="container py-5 my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
