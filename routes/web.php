@@ -3,11 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KosController;
-<<<<<<< HEAD
-use App\Http\Controllers\SearchController;
-=======
 use App\Http\Controllers\RoomController;
->>>>>>> 0694fa341ef0f4c68836abe3e9521edec95bb1b6
 
 /*
 |--------------------------------------------------------------------------
