@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kos;
 
 class KosController extends Controller
 {
-    public function add(Request $request) {
+    public function add(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'alamat' => 'required',
@@ -26,7 +28,8 @@ class KosController extends Controller
         return redirect("dashboard")->withSuccess('Kos sukses dimasukkan');
     }
 
-    public function create(array $data) {
+    public function create(array $data)
+    {
         return Kos::create([
             'ownerId' => $data['ownerId'],
             'name' => $data['name'],
@@ -43,13 +46,55 @@ class KosController extends Controller
         ]);
     }
 
-    public function getKosById(int $id) {
+    public function getKosById(int $id)
+    {
         $kos = Kos::where('id', $id);
         return redirect('detail-kos', [$kos]);
     }
 
-    public function getKosByFilter(Request $request) {
+    public function getKosSearchPage()
+    {
+        $provinsi = Kos::select('provinsi')->groupby()->get();
+        // dd($provinsi);
+        return view('cari_kos', compact('provinsi'));
+    }
+
+    public function getKosByFilter(Request $request)
+    {
         $data = $request->all();
-        
+
+        $kos = Kos::where('provinsi', $request->provinsi)
+            ->where('kota', $request->kota)
+            ->where('kecamatan', $request->kecamatan)
+            ->where('alamat', 'like', '%' . $request->alamat . '%')
+            ->where('tersedia', '>', 0)
+            ->get();
+
+        if (sizeof($kos) == 0) {
+            $kos = Kos::where('provinsi', $request->provinsi)
+                ->where('kota', $request->kota)
+                ->where('kecamatan', $request->kecamatan)
+                ->where('tersedia', '>', 0)
+                ->get();
+        }
+
+        if ($request->listrik !== null) {
+            $kos = $kos->where('listrik', $request->listrik);
+        }
+        if ($request->wc !== null) {
+            $kos = $kos->where('wc', $request->wc);
+        }
+        if ($request->has('ac')) {
+            $kos = $kos->where('ac', 1);
+        } else {
+            $kos = $kos->where('ac', 0);
+        }
+        if ($request->has('wifi')) {
+            $kos = $kos->where('wifi', 1);
+        } else {
+            $kos = $kos->where('wifi', 0);
+        }
+        // Code Here
+        dd($kos);
     }
 }
