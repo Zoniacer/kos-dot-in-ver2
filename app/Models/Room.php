@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kos extends Model
+class Room extends Model
 {
     use HasFactory;
 
@@ -15,18 +15,9 @@ class Kos extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'ownerId',
-        'name',
-        'alamat',
-        'kecamatan',
-        'kota',
-        'provinsi',
-        'tersedia',
-        'ac',
-        'listrik',
-        'wifi',
-        'wc',
-        'perabot',
+        'idRoom',
+        'title',
+        'imagePath'
     ];
 
     /**

@@ -235,6 +235,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 
 <body>
 	@section('navbar')
+<<<<<<< HEAD
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 		<img src="assets/logover2.png" alt="" width="80" height="50">
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -244,10 +245,38 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 			<div class="navbar-nav">
 				<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
+=======
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+	<img src="assets/logover2.png" alt=""  width="80" height="50">  		
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
+		</div>
+		<div class="navbar-nav">
+			<a href="#" class="nav-item nav-link mt-1">Cari Kos</a>
+		</div>
+		<div class="navbar-nav ml-auto action-buttons">
+			@auth
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="">
+					<ion-icon name="accessibility-outline"></ion-icon>
+                </a>
+                <div class="dropdown-menu action-form">
+					<form action="/examples/actions/confirmation.php" method="post">
+						<p class="hint-text">Selamat datang, {{ auth()->user()->name }}</p>
+						
+					</form>
+				</div>
+>>>>>>> 2ead5aa71847b9b71b8ff68dd39276238dfe633f
 			</div>
 			<div class="navbar-nav">
 				<a href="{{ route('search') }}" class="nav-item nav-link mt-1">Cari Kos</a>
 			</div>
+<<<<<<< HEAD
 			<div class="navbar-nav ml-auto action-buttons">
 				@auth
 				<div class="nav-item dropdown">
@@ -311,6 +340,31 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 						</form>
 					</div>
 					@endauth
+=======
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn mt-1">Registrasi</a>
+                <div class="dropdown-menu action-form">
+					<form action="{{ route('register') }}" method="post">
+						@csrf <!-- {{ csrf_field() }} -->
+						<p class="hint-text">Isi form berikut ini untuk membuat akun anda! {{ auth()->check() }}</p>
+						<div class="form-group">
+							<input name='name' type="text" class="form-control" placeholder="Nama Akun" required="required">
+						</div>
+						<div class="form-group">
+							<input name='email' type="email" class="form-control" placeholder="Email" required="required">
+						</div>
+						<div class="form-group">
+							<input name='password' type="password" class="form-control" placeholder="Kata Sandi" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Konfirmasi Kata Sandi" required="required">
+						</div>
+						<div class="form-group">
+							<label class="form-check-label"><input type="checkbox" required="required"> Saya setuju dengan <a href="#">Terms &amp; Conditions</a></label>
+						</div>
+						<input type="submit" class="btn btn-primary btn-block" value="Registrasi">
+					</form>
+>>>>>>> 2ead5aa71847b9b71b8ff68dd39276238dfe633f
 				</div>
 			</div>
 		</div>
