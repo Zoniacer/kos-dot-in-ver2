@@ -74,8 +74,8 @@ class KosController extends Controller
 
     public function getKosById(int $id)
     {
-        $kos = Kos::where('id', $id);
-        return redirect('detail-kos', [$kos]);
+        $kos = Kos::where('id', $id)->get();
+        return redirect('detail-kos', compact('kos'));
     }
 
     public function getKosSearchPage()
@@ -107,12 +107,14 @@ class KosController extends Controller
                 ->get();
         }
 
-        if ($request->listrik !== null) {
+        
+        if ($request->listrik != null) {
             $kos = $kos->where('listrik', $request->listrik);
         }
-        if ($request->wc !== null) {
+        if ($request->wc != null) {
             $kos = $kos->where('wc', $request->wc);
         }
+
         if ($request->has('ac')) {
             $kos = $kos->where('ac', 1);
         } else {
@@ -124,6 +126,12 @@ class KosController extends Controller
             $kos = $kos->where('wifi', 0);
         }
         // Code Here
-        dd($kos);
+        return view('hasilPencarian', compact('kos'));
+
+    }
+
+    public function dashboard() {
+        $kos = Kos::inRandomOrder()->limit(1)->get();
+        return view('home', compact('kos'));
     }
 }

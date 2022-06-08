@@ -59,15 +59,6 @@ class AuthController extends Controller
       ]);
     }    
     
-    public function dashboard()
-    {
-        // if(Auth::check()){
-            return view('home');
-        // }
-  
-        // return redirect("login")->withSuccess('You must login first');
-    }
-    
     public function signOut() {
         Session::flush();
         Auth::logout();
