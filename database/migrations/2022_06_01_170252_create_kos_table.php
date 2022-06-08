@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('kos', function (Blueprint $table) {
             $table->id();
+            $table->integer('ownerId');
             $table->string('name');
             $table->string('alamat');
             $table->string('kecamatan');

@@ -28,6 +28,7 @@ class KosController extends Controller
 
     public function create(array $data) {
         return Kos::create([
+            'ownerId' => $data['ownerId'],
             'name' => $data['name'],
             'alamat' => $data['alamat'],
             'kecamatan' => $data['kecamatan'],
@@ -49,6 +50,6 @@ class KosController extends Controller
 
     public function getKosByFilter(Request $request) {
         $data = $request->all();
-        
+        // Code Here
     }
 }

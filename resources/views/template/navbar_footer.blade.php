@@ -220,7 +220,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
                 </a>
                 <div class="dropdown-menu action-form">
 					<form action="/examples/actions/confirmation.php" method="post">
-						<p class="hint-text">Selamat datang {{ auth()->user()->name }}</p>
+						<p class="hint-text">Selamat datang, {{ auth()->user()->name }}</p>
 						
 					</form>
 				</div>
@@ -246,7 +246,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
                 <div class="dropdown-menu action-form">
 					<form action="{{ route('register') }}" method="post">
 						@csrf <!-- {{ csrf_field() }} -->
-						<p class="hint-text">Isi form berikut ini untuk membuat akun anda!</p>
+						<p class="hint-text">Isi form berikut ini untuk membuat akun anda! {{ auth()->check() }}</p>
 						<div class="form-group">
 							<input name='name' type="text" class="form-control" placeholder="Nama Akun" required="required">
 						</div>
