@@ -21,11 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', [AuthController::class, 'dashboard']);
-<<<<<<< HEAD
 Route::get('login-page', [AuthController::class, 'index'])->name('login-page');
-=======
-// Route::get('login', [AuthController::class, 'index'])->name('login-page');
->>>>>>> f584dbf1f6314520ce1309e990c3438395ac3feb
 // Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login'); 
 Route::get('registration-page', [AuthController::class, 'registration'])->name('registration-page');
 // Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register'); 
