@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KosController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('login-page', [AuthController::class, 'index'])->name('login-page');
 // Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login'); 
 Route::get('registration-page', [AuthController::class, 'registration'])->name('registration-page');
