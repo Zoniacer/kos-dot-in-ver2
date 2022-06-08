@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KosController;
+<<<<<<< HEAD
 use App\Http\Controllers\SearchController;
+=======
+use App\Http\Controllers\RoomController;
+>>>>>>> 0694fa341ef0f4c68836abe3e9521edec95bb1b6
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +26,10 @@ Route::get('/', function () {
 
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('login-page', [AuthController::class, 'index'])->name('login-page');
-// Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login'); 
 Route::get('registration-page', [AuthController::class, 'registration'])->name('registration-page');
+Route::get('detail/{id}', [KosController::class, 'getKosById'])->name('detail-kos');
+Route::get('room/{id}', [RoomController::class, 'getRoom'])->name('room');
+// Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login'); 
 // Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register'); 
 // Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('search-page', [KosController::class, 'getKosSearchPage'])->name('search.page');

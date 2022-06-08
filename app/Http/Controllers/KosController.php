@@ -49,7 +49,7 @@ class KosController extends Controller
     public function getKosById(int $id)
     {
         $kos = Kos::where('id', $id);
-        return $kos;
+        return redirect('detail-kos', [$kos]);
     }
 
     public function getKosSearchPage()
@@ -62,6 +62,7 @@ class KosController extends Controller
     public function getKosByFilter(Request $request)
     {
         $data = $request->all();
+<<<<<<< HEAD
 
         $kos = Kos::where('provinsi', $request->provinsi)
             ->where('kota', $request->kota)
@@ -96,5 +97,8 @@ class KosController extends Controller
         }
         // Code Here
         dd($kos);
+=======
+        
+>>>>>>> 0694fa341ef0f4c68836abe3e9521edec95bb1b6
     }
 }
