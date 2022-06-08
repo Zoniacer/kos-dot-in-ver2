@@ -1,12 +1,15 @@
 @extends('layouts.app')
-
+@extends('template.navbar_footer')
+@section('title')
+Login
+@endsection
 @section('content')
-<div class="container">
+@section('isi')
+<div class="container py-5 my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -70,4 +73,5 @@
         </div>
     </div>
 </div>
+@endsection
 @endsection
