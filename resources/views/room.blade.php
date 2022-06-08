@@ -1,18 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
+
 	<head>
-		<title>three.js webgl - equirectangular panorama</title>
+
+		<link rel="icon" type="image/x-icon" href="assets/logover2.png">
+</head>
+	<title>Kos.in | Panorama</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- <link type="text/css" rel="stylesheet" href="main.css"> -->
-	</head>
-	<body>
+		<style>
+			body {
+				margin: 0;
+				background-color: #000;
+				color: #fff;
+				font-family: Monospace;
+				font-size: 13px;
+				line-height: 24px;
+				overscroll-behavior: none;
+			}
+
+			a {
+				color: #ff0;
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			button {
+				cursor: pointer;
+				text-transform: uppercase;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				padding: 10px;
+				box-sizing: border-box;
+				text-align: center;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				pointer-events: none;
+				z-index: 1; /* TODO Solve this in HTML */
+			}
+
+			a, button, input, select {
+				pointer-events: auto;
+			}
+
+			.lil-gui {
+				z-index: 2 !important; /* TODO Solve this in HTML */
+			}
+
+			@media all and ( max-width: 640px ) {
+				.lil-gui.root { 
+					right: auto;
+					top: auto;
+					max-height: 50%;
+					max-width: 80%;
+					bottom: 0;
+					left: 0;
+				}
+			}
+
+			#overlay {
+				position: absolute;
+				font-size: 16px;
+				z-index: 2;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				background: rgba(0,0,0,0.7);
+			}
+
+				#overlay button {
+					background: transparent;
+					border: 0;
+					border: 1px solid rgb(255, 255, 255);
+					border-radius: 4px;
+					color: #ffffff;
+					padding: 12px 18px;
+					text-transform: uppercase;
+					cursor: pointer;
+				}
+
+			#notSupported {
+				width: 50%;
+				margin: auto;
+				background-color: #f00;
+				margin-top: 20px;
+				padding: 10px;
+			}
+		</style>
+
 
 		<div id="container"></div>
-		<div id="info">
+		<!-- <div id="info">
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js webgl</a> - equirectangular panorama demo. photo by <a href="http://www.flickr.com/photos/jonragnarsson/2294472375/" target="_blank" rel="noopener">Jón Ragnarsson</a>.<br />
 			drag equirectangular texture into the page.
-		</div>
+		</div> -->
 
 		<script type="module">
 
@@ -41,7 +135,7 @@
 				// invert the geometry on the x-axis so that all of the faces point inward
 				geometry.scale( - 1, 1, 1 );
 
-				const texture = new THREE.TextureLoader().load("{{ URL::to('/') }}/images/2345.jpg");
+				const texture = new THREE.TextureLoader().load("{{ URL::to('/') }}/images/{{ $path }}");
 				const material = new THREE.MeshBasicMaterial( { map: texture } );
 
 				const mesh = new THREE.Mesh( geometry, material );
@@ -188,5 +282,3 @@
 			}
 
 		</script>
-	</body>
-</html>

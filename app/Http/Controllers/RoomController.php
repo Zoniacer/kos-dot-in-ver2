@@ -29,11 +29,13 @@ class RoomController extends Controller
 
     public function getRooms(int $idKos) {
         $rooms = Room::where('idKos', $idKos);
-        return view('rooms', [$rooms]);
+        return view('rooms', compact('rooms'));
     }
 
     public function getRoom(int $id) {
-        $room = Room::where('id', $id);
-        return view('room', [$room]);
+        $room = Room::where('id', $id)->get();
+        // dd($room);
+        $path = $room[0]->imagePath;
+        return view('room', compact('path'));
     }
 }
