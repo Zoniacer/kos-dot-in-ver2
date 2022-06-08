@@ -246,7 +246,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 				<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
 			</div>
 			<div class="navbar-nav">
-				<a href="#" class="nav-item nav-link mt-1">Cari Kos</a>
+				<a href="{{ route('search.page') }}" class="nav-item nav-link mt-1">Cari Kos</a>
 			</div>
 			<div class="navbar-nav ml-auto action-buttons">
 				@auth
