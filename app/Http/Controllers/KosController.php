@@ -45,11 +45,11 @@ class KosController extends Controller
 
     public function getKosById(int $id) {
         $kos = Kos::where('id', $id);
-        return $kos;
+        return redirect('detail-kos', [$kos]);
     }
 
     public function getKosByFilter(Request $request) {
         $data = $request->all();
-        // Code Here
+        
     }
 }
