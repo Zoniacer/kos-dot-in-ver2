@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -364,41 +365,42 @@ body {
 $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	e.stopPropagation();
 });
-</script>
-<link rel="icon" type="image/x-icon" href="assets/logover2.png">
-</head> 
+	</script>
+	<link rel="icon" type="image/x-icon" href="assets/logover2.png">
+</head>
+
 <body>
 	@section('navbar')
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-	<img src="assets/logover2.png" alt=""  width="80" height="50">  		
-	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<!-- Collection of nav links, forms, and other content for toggling -->
-	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		<div class="navbar-nav">
-			<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
-		</div>
-		<div class="navbar-nav">
-			<a href="#" class="nav-item nav-link mt-1">Cari Kos</a>
-		</div>
-		<div class="navbar-nav ml-auto action-buttons">
-			@auth
-			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="">
-					<ion-icon name="accessibility-outline"></ion-icon>
-                </a>
-                <div class="dropdown-menu action-form">
-					<form action="/examples/actions/confirmation.php" method="post">
-						<p class="hint-text">Selamat datang, {{ auth()->user()->name }}</p>
-						
-					</form>
-				</div>
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+		<img src="assets/logover2.png" alt="" width="80" height="50">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Collection of nav links, forms, and other content for toggling -->
+		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+			<div class="navbar-nav">
+				<a href="#" class="nav-item nav-link mt-1">Kenalkan Kos Kamu</a>
 			</div>
-			@else
-			<div class="nav-item dropdown">
-				<a href="{{ route('login-page') }}" class="nav-link mt-1 mr-4">Masuk</a>
-				<!-- <div class="dropdown-menu action-form">
+			<div class="navbar-nav">
+				<a href="{{ route('search.page') }}" class="nav-item nav-link mt-1">Cari Kos</a>
+			</div>
+			<div class="navbar-nav ml-auto action-buttons">
+				@auth
+				<div class="nav-item dropdown">
+					<a href="#" data-toggle="dropdown" class="">
+						<ion-icon name="accessibility-outline"></ion-icon>
+					</a>
+					<div class="dropdown-menu action-form">
+						<form action="/examples/actions/confirmation.php" method="post">
+							<p class="hint-text">Selamat datang, {{ auth()->user()->name }}</p>
+
+						</form>
+					</div>
+				</div>
+				@else
+				<div class="nav-item dropdown">
+					<a href="{{ route('login-page') }}" class="nav-link mt-1 mr-4">Masuk</a>
+					<!-- <div class="dropdown-menu action-form">
 					<form action="{{ route('login') }}" method="post">
 						@csrf {{ csrf_field() }}
 						<div class="form-group">
@@ -410,10 +412,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 						<input type="submit" class="btn btn-primary btn-block" value="Masuk">
 					</form>
 				</div> -->
-			</div>
-			<div class="nav-item dropdown">
-				<a href="{{ route('registration-page') }}" class="btn btn-primary sign-up-btn mt-1">Registrasi</a>
-                <!-- <div class="dropdown-menu action-form">
+				</div>
+				<div class="nav-item dropdown">
+					<a href="{{ route('registration-page') }}" class="btn btn-primary sign-up-btn mt-1">Registrasi</a>
+					<!-- <div class="dropdown-menu action-form">
 					<form action="{{ route('register') }}" method="post">
 						@csrf 
 						<p class="hint-text">Isi form berikut ini untuk membuat akun anda! {{ auth()->check() }}</p>
@@ -435,7 +437,8 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 						<input type="submit" class="btn btn-primary btn-block" value="Registrasi">
 					</form>
 				</div> -->
-				@endauth
+					@endauth
+				</div>
 			</div>
         </div>
 	</div>
@@ -500,4 +503,5 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 </footer>
 @show
 </body>
+
 </html>
