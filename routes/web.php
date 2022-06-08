@@ -30,6 +30,7 @@ Route::get('room/{id}', [RoomController::class, 'getRoom'])->name('room');
 // Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('search-page', [KosController::class, 'getKosSearchPage'])->name('search.page');
 Route::post('search', [KosController::class, 'getKosByFilter'])->name('search');
+Route::get('add-kos-page', [KosController::class, 'getKosAddPage'])->name('add-kos.page');
 Route::post('add-kos', [KosController::class, 'add'])->name('add-kos');
 Route::post('add-room', [KosController::class, 'addRoom'])->name('add-room');
 Auth::routes();

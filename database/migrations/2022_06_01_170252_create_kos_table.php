@@ -28,8 +28,9 @@ return new class extends Migration
             $table->boolean('wifi');
             $table->string('wc');
             $table->string('perabot')->nullable();
-            $table->long('harga');
+            $table->decimal('harga', 10, 2);
             $table->string('coverPath');
+            $table->string('hp');
             $table->timestamps();
         });
     }
