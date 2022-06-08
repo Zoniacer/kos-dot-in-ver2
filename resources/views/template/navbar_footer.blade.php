@@ -227,10 +227,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 			</div>
 			@else
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mt-1 mr-4">Masuk</a>
-				<div class="dropdown-menu action-form">
+				<a href="{{ route('login-page') }}" class="nav-link mt-1 mr-4">Masuk</a>
+				<!-- <div class="dropdown-menu action-form">
 					<form action="{{ route('login') }}" method="post">
-						@csrf <!-- {{ csrf_field() }} -->
+						@csrf {{ csrf_field() }}
 						<div class="form-group">
 							<input type="email" class="form-control" placeholder="Email" required="required">
 						</div>
@@ -239,13 +239,13 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 						</div>
 						<input type="submit" class="btn btn-primary btn-block" value="Masuk">
 					</form>
-				</div>
+				</div> -->
 			</div>
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn mt-1">Registrasi</a>
-                <div class="dropdown-menu action-form">
+				<a href="{{ route('registration-page') }}" class="btn btn-primary sign-up-btn mt-1">Registrasi</a>
+                <!-- <div class="dropdown-menu action-form">
 					<form action="{{ route('register') }}" method="post">
-						@csrf <!-- {{ csrf_field() }} -->
+						@csrf 
 						<p class="hint-text">Isi form berikut ini untuk membuat akun anda! {{ auth()->check() }}</p>
 						<div class="form-group">
 							<input name='name' type="text" class="form-control" placeholder="Nama Akun" required="required">
@@ -264,7 +264,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 						</div>
 						<input type="submit" class="btn btn-primary btn-block" value="Registrasi">
 					</form>
-				</div>
+				</div> -->
 				@endauth
 			</div>
         </div>

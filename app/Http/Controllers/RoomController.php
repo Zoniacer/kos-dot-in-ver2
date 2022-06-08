@@ -24,11 +24,16 @@ class RoomController extends Controller
             'imagePath' => $filename
         ]);
 
-        return redirect('');
+        return redirect('???')->withSuccess('Gambar sukses dimasukkan');
     }
 
-    public function getRoom(int $idKos) {
+    public function getRooms(int $idKos) {
         $rooms = Room::where('idKos', $idKos);
         return view('rooms', [$rooms]);
+    }
+
+    public function getRoom(int $id) {
+        $room = Room::where('id', $id);
+        return view('room', [$room]);
     }
 }
