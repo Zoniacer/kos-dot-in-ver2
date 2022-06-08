@@ -61,11 +61,11 @@ class AuthController extends Controller
     
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
+        // if(Auth::check()){
+            return view('home');
+        // }
   
-        return redirect("login")->withSuccess('You are not allowed to access');
+        // return redirect("login")->withSuccess('You must login first');
     }
     
     public function signOut() {
