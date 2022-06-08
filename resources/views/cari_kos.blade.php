@@ -2,14 +2,14 @@
 @section('title')
 Cari Kos
 @endsection
-<style>
+{{-- <style>
     .container {
         max-width: 75%;
     }
-</style>
+</style> --}}
 @section('isi')
 <div class="container">
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center my-5">
         <div class="col-md-8 order-md-1">
             <h2 class="mb-3">Cari Kos</h2>
             <form class="needs-validation" action="{{ route('search') }}" method="POST">
