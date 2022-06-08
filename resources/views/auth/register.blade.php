@@ -1,7 +1,17 @@
 @extends('layouts.app')
-
+@extends('template.navbar_footer')
+@section('title')
+Registrasi
+@endsection
 @section('content')
-<div class="container">
+@section('isi')
+<style>
+body {
+  background-image: url('assets/fotokosan/BG.png');
+  background-attachment: fixed;
+}
+</style>
+<div class="container py-5 my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -63,7 +73,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="nav-item dropdown btn btn-primary sign-up-btn">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -74,4 +84,5 @@
         </div>
     </div>
 </div>
+@endsection
 @endsection
