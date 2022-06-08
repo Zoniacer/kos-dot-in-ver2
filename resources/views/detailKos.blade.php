@@ -52,7 +52,7 @@ Detail Kos
             <dl>
                 <dt><img src="assets/details/AC.png" alt="" width="30" height="30">&emsp;AC</dt>
                 <dt><img src="assets/details/Tidak Listrik.png" alt="" width="30" height="30">&emsp;Listrik</dt>
-                <dt><img src="assets/details/Wifi.png" alt="" width="30" height="30">&emsp;Wifi</dt>
+                <dt><img src="assets/details/Wifi3.png" alt="" width="30" height="30">&emsp;Wifi</dt>
                 <dt><img src="assets/details/Kamar Mandi.png" alt="" width="30" height="30">&emsp;WC</dt>
                 <dt><img src="assets/details/Perabot.png" alt="" width="30" height="30">&emsp;Perabotan</dt>
             </dl>
