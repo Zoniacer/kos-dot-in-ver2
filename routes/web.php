@@ -31,10 +31,23 @@ Route::get('room/{id}', [RoomController::class, 'getRoom'])->name('room');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('add-kos-page', [KosController::class, 'getKosAddPage'])->name('add-kos.page');
     Route::post('add-kos', [KosController::class, 'add'])->name('add-kos');
-    Route::post('add-room', [KosController::class, 'addRoom'])->name('add-room');
+    Route::post('add-room', [RoomController::class, 'addRoom'])->name('add-room');
 });
 Route::get('search-page', [KosController::class, 'getKosSearchPage'])->name('search.page');
 Route::post('search', [KosController::class, 'getKosByFilter'])->name('search');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('storage/{folder}/{filename}', function ($folder,$filename)
+{
+    $path = public_path('storage/' .$folder.'/'. $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+});

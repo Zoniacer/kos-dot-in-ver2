@@ -20,15 +20,19 @@ Detail Kos
 </style>
 @section('isi')
     <div class="d-flex justify-content-center mt-4">
-        <img src="assets/fotokosan/1.jpeg"class="img-fluid rounded background-box m-2" alt="" width="600" height="600">
+        <img src="{{ asset('storage/covers/'.$kos->coverPath) }}"class="img-fluid rounded background-box m-2" alt="" width="600" height="600">
     </div>
     <div class="container-md mt-2 mb-4">
         <div class="col-12">
-            <h2>{{ $kos->nama }}</h2>
+            <h2>{{ $kos->name }}</h2>
             <h3 class="d-flex flex-row-reverse">Rp. {{ $kos->harga }} /Bulan</h3>
         </div>
-        <div class="col-3 d-flex justify-content-right">
-            <a href="rooms/{{ $kos->id }}" class="btn-tier rounded nav-link mt-1 mr-4">Tour Virtual</a>
+        <div class="col-6 d-flex justify-content-right">
+            @forelse ($room as $r)
+            <a href="{{ route('room', $kos->id) }}" class="btn-tier rounded nav-link mt-1 mr-4">Lihat Tur Virtual</a>
+            @empty
+            <a href="#turvirtual" class="btn-tier rounded nav-link mt-1 mr-4">Tur Virtual tidak tersedia</a>
+            @endforelse
         </div>
     </div>
     <div class="container-md mb-3">
@@ -50,23 +54,38 @@ Detail Kos
         <div class="col-3 d-flex justify-content-right">
             <dl>
                 @if ($kos->ac == 1)
-                <dt><img src="assets/details/AC.png" alt="" width="30" height="30">&emsp;AC</dt>
+                <dt><img src="{{ URL::to('/') }}/assets/details/AC.png" alt="" width="30" height="30">&emsp;AC</dt>
                 @endif
-                <dt><img src="assets/details/Tidak Listrik.png" alt="" width="30" height="30">&emsp;Listrik {{$kos->listrik}} </dt>
-
+                <dt><img src="{{ URL::to('/') }}/assets/details/Tidak Listrik.png" alt="" width="30" height="30">&emsp;Listrik {{$kos->listrik}} </dt>
+                
                 @if ($kos->wifi == 1)
-                <dt><img src="assets/details/Wifi.png" alt="" width="30" height="30">&emsp;Wifi</dt>
+                <dt><img src="{{ URL::to('/') }}/assets/details/Wifi3.png" alt="" width="30" height="30">&emsp;Wifi</dt>
                 @endif
-
-                <dt><img src="assets/details/Kamar Mandi.png" alt="" width="30" height="30">&emsp;WC {{$kos->wc}} </dt>
+                
+                <dt><img src="{{ URL::to('/') }}/assets/details/Kamar Mandi.png" alt="" width="30" height="30">&emsp;WC {{$kos->wc}} </dt>
 
                 @if ($kos->perabot != NULL)
-                <dt><img src="assets/details/Perabot.png" alt="" width="30" height="30">&emsp;Perabotan  {{$kos->perabotan]}} </dt>
+                <dt><img src="{{ URL::to('/') }}/assets/details/Perabot.png" alt="" width="30" height="30">&emsp;Perabotan  {{$kos->perabotan}} </dt>
                 @endif
-
+                
             </dl>
         </div>
     </div>
+    @if ($kos->ownerId == Auth::user()->id)
+    <div class="container-md my-3" id="turvirtual">
+        <div class="col-7">
+            <h3>Tambahkan/Update Tur Virtual</h3>
+        </div>
+        <div class="col-6 d-flex justify-content-right">
+            <form class="needs-validation" action="{{ route('add-room') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input name="image" type="file"/>
+                <input name="idKos" type="text" value="{{ $kos->id }}" hidden/>
+                <input type="submit" class="btn-tier rounded nav-link mt-1 mr-4">
+            </form>
+        </div>
+    </div>
+    @endif
     
     
 @endsection

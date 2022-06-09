@@ -10,7 +10,7 @@ class RoomController extends Controller
     public function addRoom(Request $request) {
         
         $request->validate([
-            'image' => 'required'
+            'image' => 'required|max:10000'
         ]);
         
         $idKos = $request->idKos;
@@ -21,10 +21,11 @@ class RoomController extends Controller
 
         Room::create([
             'idKos' => $idKos,
+            'title' => "Panorama",
             'imagePath' => $filename
         ]);
 
-        return redirect('???')->withSuccess('Gambar sukses dimasukkan');
+        return redirect()->back()->withSuccess('Gambar sukses dimasukkan');
     }
 
     public function getRooms(int $idKos) {
@@ -33,7 +34,7 @@ class RoomController extends Controller
     }
 
     public function getRoom(int $id) {
-        $room = Room::where('id', $id)->get();
+        $room = Room::where('idKos', $id)->get();
         // dd($room);
         $path = $room[0]->imagePath;
         return view('room', compact('path'));

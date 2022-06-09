@@ -16,11 +16,15 @@ Cari
   <div class="card-body">
       <div class="row">
           <div class="col-md-4">
-            <img class="cover img-fluid" src="{{ URL::to('/') }}/covers/{{ $k->coverPath }}" alt="Cover">
+            <a href="detail/{{ $k->id }}">
+              <img class="cover img-fluid" src="{{ asset('storage/covers/'.$k->coverPath) }}" alt="Cover">
+            </a>
           </div>
           <div class="col-md-8">
-            <h3>{{ $k->name }}</h3>
-            <p>{{ $k->deskripsi }}</p>
+            <a href="detail/{{ $k->id }}">
+              <h3>{{ $k->name }}</h3>
+            </a>
+              <p>{{ $k->deskripsi }}</p>
           </div>
       </div>
   </div>

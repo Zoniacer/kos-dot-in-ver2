@@ -411,7 +411,7 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	@section('navbar')
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 		<a href="/dashboard">
-			<img src="assets/logover2.png" alt="" width="80" height="50">
+			<img src="{{ URL::to('/') }}/assets/logover2.png" alt="" width="80" height="50">
 		</a>
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>

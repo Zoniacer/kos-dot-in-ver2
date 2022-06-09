@@ -16,6 +16,7 @@ class Room extends Model
      */
     protected $fillable = [
         'idRoom',
+        'idKos',
         'title',
         'imagePath'
     ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kos;
+use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
 
 class KosController extends Controller
@@ -31,6 +32,7 @@ class KosController extends Controller
 
         $filename = time() . "-" . $image->getClientOriginalName();
         $path = $request->file('image')->storeAs("public/covers", $filename);
+        // dd($path);
 
         $data = $request->all();
         if ($request->has('ac')) {
@@ -44,7 +46,6 @@ class KosController extends Controller
             $data['wifi'] = 0;
         }
         $data['filename'] = $filename;
-        // dd($data);
         $check = $this->create($data);
 
         return redirect("dashboard")->withSuccess('Kos sukses dimasukkan');
@@ -74,8 +75,10 @@ class KosController extends Controller
 
     public function getKosById(int $id)
     {
-        $kos = Kos::where('id', $id)->get();
-        return redirect('detail-kos', compact('kos'));
+        $kos = Kos::find($id);
+        $room = Room::where('idKos', $id)->get();
+        // dd($room);
+        return view('detailKos', compact('kos', 'room'));
     }
 
     public function getKosSearchPage()
@@ -131,7 +134,7 @@ class KosController extends Controller
     }
 
     public function dashboard() {
-        $kos = Kos::inRandomOrder()->limit(1)->get();
+        $kos = Kos::inRandomOrder()->limit(8)->get();
         return view('home', compact('kos'));
     }
 }

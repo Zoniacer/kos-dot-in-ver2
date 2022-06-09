@@ -177,13 +177,33 @@ $(document).ready(function () {
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
+    <!-- <li data-target="#demo" data-slide-to="2"></li> -->
   </ul>
   
   <!-- The slideshow -->
   <div class="container carousel-inner no-padding">
     <div class="carousel-item active">
+      <!-- <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="assets/fotokosan/1.jpeg">
+      </div>    
       <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="assets/fotokosan/1.jpeg">
+      </div>   
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="assets/fotokosan/1.jpeg">
+      </div>    -->
+      @foreach ($kos as $k)
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <a href="{{ route('detail-kos', $k->id) }}">
+            <img src="{{ asset('storage/covers/'.$k->coverPath) }}">
+          </a>
+        </div>   
+        @if ($loop->index == 3)
+          </div>
+          <div class="carousel-item">
+        @endif
+      @endforeach
+      <!-- <div class="col-xs-3 col-sm-3 col-md-3">
         <img src="assets/fotokosan/1.jpeg">
       </div>    
       <div class="col-xs-3 col-sm-3 col-md-3">
@@ -194,9 +214,9 @@ $(document).ready(function () {
       </div>   
       <div class="col-xs-3 col-sm-3 col-md-3">
         <img src="assets/fotokosan/1.jpeg">
-      </div>   
+      </div>   -->
     </div>
-    <div class="carousel-item">
+    <!-- <div class="carousel-item">
       <div class="col-xs-3 col-sm-3 col-md-3">
         <img src="assets/fotokosan/1.jpeg">
       </div>    
@@ -209,21 +229,7 @@ $(document).ready(function () {
       <div class="col-xs-3 col-sm-3 col-md-3">
         <img src="assets/fotokosan/1.jpeg">
       </div>  
-    </div>
-    <div class="carousel-item">
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="assets/fotokosan/1.jpeg">
-      </div>    
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="assets/fotokosan/1.jpeg">
-      </div>   
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="assets/fotokosan/1.jpeg">
-      </div>   
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="assets/fotokosan/1.jpeg">
-      </div>  
-    </div>
+    </div> -->
   </div>
   
   <!-- Left and right controls -->
