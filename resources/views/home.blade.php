@@ -254,8 +254,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Selalu puas dengan kualitas dan pelayanan Kos.In. Kamar yang nyaman, fasilitas yang keren, dan lokasi strategis!
                 </div>
                 <div class="name">
                     Denis Richie
@@ -269,8 +268,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Tempatnya keren banget, dapat banyak fasilitas.
                 </div>
                 <div class="name">
                     Lisa Sthalekar
@@ -284,8 +282,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Kos.In dapat memilih tempat yang strategis. Dekat dengan tempat makanan dan keperluan sehari hari.
                 </div>
                 <div class="name">
                     Elizabith Richie
@@ -299,8 +296,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Keren!
                 </div>
                 <div class="name">
                     Daniel Xavier
@@ -314,8 +310,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Tempatnya nyaman sekali!
                 </div>
                 <div class="name">
                     Emma Watson
@@ -329,8 +324,7 @@ $(document).ready(function () {
                         alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Luar biasa!
                 </div>
                 <div class="name">
                     Mohammad Imran

@@ -17,7 +17,7 @@ use App\Http\Controllers\RoomController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('dashboard');
 });
 
 Route::get('dashboard', [KosController::class, 'dashboard'])->name('dashboard');
